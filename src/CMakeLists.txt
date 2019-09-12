@@ -1,8 +1,8 @@
 set(TARGET_NAME nfd)
 
 set(HEADER_FILES
-  include/nfd.h
-  include/nfd.hpp)
+  include/nfd/nfd.h
+  include/nfd/nfd.hpp)
 
 if(nfd_PLATFORM STREQUAL PLATFORM_WIN32)
   set(SOURCE_FILES nfd_win.cpp)

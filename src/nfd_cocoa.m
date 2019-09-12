@@ -5,7 +5,7 @@
  */
 
 #include <AppKit/AppKit.h>
-#include "nfd.h"
+#include "nfd/nfd.h"
 
 static const char* g_errorstr = NULL;
 

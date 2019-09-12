@@ -27,7 +27,7 @@ struct IUnknown; // Workaround for "combaseapi.h(229): error C2187: syntax error
 #include <assert.h>
 #include <windows.h>
 #include <shobjidl.h>
-#include "nfd.h"
+#include <nfd/nfd.h>
 
 
 namespace {

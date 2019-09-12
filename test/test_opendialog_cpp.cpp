@@ -1,4 +1,4 @@
-#include "nfd.hpp"
+#include <nfd/nfd.hpp>
 #include <iostream>
 
 /* this test should compile on all supported platforms */
