@@ -2,6 +2,7 @@
 /.vs/ProjectSettings.json
 /.vs/*.sqlite
 /.vs/nativefiledialog-extended/
+/.vs/VSWorkspaceState.json
 /out/
 
 # Mac OS X rubbish
