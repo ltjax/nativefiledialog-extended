@@ -28,3 +28,14 @@ class NativeFileDialogExtendedConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["nfd"]
+        if self.settings.os == "Linux":
+            self._add_libraries_from_pc("gtk+-3.0")
+
+    def _add_libraries_from_pc(self, library):
+        pkg_config = tools.PkgConfig(library)
+        libs = [lib[2:] for lib in pkg_config.libs_only_l]  # cut -l prefix
+        lib_paths = [lib[2:] for lib in pkg_config.libs_only_L]  # cut -L prefix
+        self.cpp_info.libs.extend(libs)
+        self.cpp_info.libdirs.extend(lib_paths)
+        self.cpp_info.sharedlinkflags.extend(pkg_config.libs_only_other)
+        self.cpp_info.exelinkflags.extend(pkg_config.libs_only_other)
