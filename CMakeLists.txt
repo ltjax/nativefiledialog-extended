@@ -10,6 +10,8 @@ elseif(UNIX AND NOT APPLE)
   set(nfd_PLATFORM PLATFORM_LINUX)
 endif()
 
+set(CMAKE_CXX_STANDARD 11)
+
 message("nfd Platform: ${nfd_PLATFORM}")
 
 add_subdirectory(src)

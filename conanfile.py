@@ -30,6 +30,11 @@ class NativeFileDialogExtendedConan(ConanFile):
         self.cpp_info.libs = ["nfd"]
         if self.settings.os == "Linux":
             self._add_libraries_from_pc("gtk+-3.0")
+        elif self.settings.os == "Macos":
+            frameworks = ["AppKit"]
+            for framework in frameworks:
+                self.cpp_info.exelinkflags.append("-framework {0}".format(framework))
+                self.cpp_info.sharedlinkflags.append("-framework {0}".format(framework))
 
     def _add_libraries_from_pc(self, library):
         pkg_config = tools.PkgConfig(library)
